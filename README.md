@@ -44,5 +44,13 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 17. No test should be dependent on the results of another.
 18. Callbacks should be used to ensure that feeds are loaded before they are tested.
 19. Implement error handling for undefined variables and out-of-bound array access.
-20. When complete - all of your tests should pass. 
+20. When complete - all of your tests should pass.
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+
+### Specs
+
+1. Uses Jasmine `expect` for checking test cases
+2. `jQuery` is used to test HTML components and their properties.
+3. Mouse triggers are done using `jQuery`
+4. `done()` function is used in checking asynchronous calls
+5. To check for content change it checks whether the title is correctly changed as per the `id` passed. Since this is set inside the `success` part, it can be safely assumed that the rest of the content is also loaded.
