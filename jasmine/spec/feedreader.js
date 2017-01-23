@@ -68,15 +68,23 @@ $(function() {
     });
 
     describe('New Feed Selection', function() {
+        var content_0,
+            content_1;
 
         beforeEach(function(done) {
             loadFeed(0, function() {
-              loadFeed(1, done);
+              content_0 = $('.entry').text();
+              loadFeed(1, function() {
+                content_1 = $('.entry').text();
+                done();
+              });
             });
         });
 
         it('should change the displayed content', function() {
-            expect($('.header-title').text()).toEqual(allFeeds[1].name);
+            expect(content_0).toBeDefined();
+            expect(content_1).toBeDefined();
+            expect(content_0).not.toEqual(content_1);
         });
     });
 }());
